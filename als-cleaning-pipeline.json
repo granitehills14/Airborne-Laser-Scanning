@@ -5,7 +5,7 @@
         },
         {
             "type":"filters.dem",
-            "raster":"tandem.tif",
+            "raster":"base-dem.tif",
             "limits":"Z[20:35]"
         },
         {
@@ -22,16 +22,7 @@
             "type":"filters.smrf"
         },
         {
-            "type":"filters.range",
-            "limits":"Classification[2:2]"
-        },
-        {
            "type":"writers.las"
-        },
-        {
-            "type":"writers.gdal",
-            "resolution":1.0,
-            "output_type":"idw"
         }
     ]
 }
