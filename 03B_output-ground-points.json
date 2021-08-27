@@ -11,6 +11,11 @@
             "tag":"ground",
             "type": "writers.las",
             "compression": "true"
+        },
+        {
+            "type":"writers.gdal",
+            "resolution":0.82,
+            "output_type":"idw"
         }
     ]
 }
