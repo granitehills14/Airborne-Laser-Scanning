@@ -1,0 +1,16 @@
+{
+    "pipeline": [
+        {
+            "type":"readers.las"
+        },
+        {
+          "type":"filters.transformation",
+          "matrix":"1 0 0 Tx  0 1 0 Ty  0 0 1 Tz  0 0 0 1"
+        },
+        {
+            "tag":"adjusted",
+            "type": "writers.las",
+            "compression": "true"
+        }
+    ]
+}
