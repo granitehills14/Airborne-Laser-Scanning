@@ -1,0 +1,3 @@
+gdalbuildvrt path/to/output/file.vrt path/to/input/directory/*.tif
+
+gdal_translate -of GTiff -co "TILED=YES" path/to/input/file.vrt path/to/output/file.tif
