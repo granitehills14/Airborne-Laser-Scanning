@@ -1,4 +1,3 @@
 To combine and tile points:
 pdal tile -i "path/to/input/*.laz" -o path/to/output/tile-name-#.laz --length 1000 -v 8
 in the above, replace "1000" with whatever tile size you desire. The units are whatever units the input is in. "-v 8" is simply a debugging tag to output verbose messages and can be removed.
-
