@@ -4,6 +4,7 @@ For all things CRREL ALS
 This is a repo for developing ALS post-processing code as well as tracking system documentation, functionality, development, and bugs. We will start with ALS post-processing code and eventually work the system stuff in. 
 
 Table of contents:
+
 00_tile-records - This is the command for reading in the flight line records and prodcuce n-unit by n-unit tiles.
 
 01_clean-and-classify.json - This pipeline first cleans the point clouds by applying filters.dem, then further eliminates noise points with filters.outlier and then finally classifies the points using the simple morphological filter (filters.smrf). The input to this pipeline is a directory of raw las/laz files. The output is a directory of cleaned and classified las/laz files.
