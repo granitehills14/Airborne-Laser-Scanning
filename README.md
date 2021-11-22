@@ -5,7 +5,7 @@ This is a repo for developing ALS post-processing code as well as tracking syste
 
 Table of contents:
 
-00_tile-records - This is the command for reading in the flight line records and prodcuce n-unit by n-unit tiles.
+00_combine-and-tile - This is the command for reading in the flight line records and prodcuce n-unit by n-unit tiles.
 
 01_clean-and-classify.json - This pipeline first cleans the point clouds by applying filters.dem, then further eliminates noise points with filters.outlier and then finally classifies the points using the simple morphological filter (filters.smrf). The input to this pipeline is a directory of raw las/laz files. The output is a directory of cleaned and classified las/laz files.
 
@@ -15,7 +15,7 @@ Table of contents:
 
 03B_output-ground-points.json - This pipeline writes a bear earth DEM for rach input record as well as writing a bare earth las/laz file for each input record. This pipeline replaces 3A if and only if the customer explicitly requests ground point las/laz files. Otherwise this is not run. The input is a directory of classified las/laz files. The output is a directory of las/laz files and a directory of GeoTiff files. 
 
-04_flightline-dems2single-dem-commands.txt - This is a file of commands to first generate a VRT from the directory of individual record GeoTiffs and second to convert that VRT into a single (or tiled) GeoTiff. Also contains a single step gdal_merge.py command, which may be a better way to do this.
+04_combine-tile-dems.txt - This is the command to merge the n-unit by n-unit tiles into a single DEM.
 
 ALS-Processing_Notebook.ipynb - A juypter notebook built by Shad O'Neel to execute the processing workflow.
 
