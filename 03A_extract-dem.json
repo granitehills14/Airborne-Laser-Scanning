@@ -4,13 +4,10 @@
             "type":"readers.las"
         },
         {
-            "type":"filters.range",
-            "limits":"Classification[2:2]"
-        },
-        {
-            "type":"writers.gdal",
-            "resolution":0.82,
-            "output_type":"idw"
+           "type":"writers.gdal",
+           "where":"Classification == 2",
+           "output_type":"idw",
+           "resolution":1.64
         }
     ]
 }
