@@ -1,33 +1,35 @@
-{
-    "pipeline": [
-        {
-           "type":"readers.las"
-        },
-        {
-            "type":"filters.dem",
-            "raster":"base-dem.tif",
-            "limits":"Z[20:35]"
-        },
-        {
-            "type":"filters.outlier",
-            "method":"statistical",
-            "mean_k":12,
-            "multiplier":2.2
-        },
-        {
-          "type":"filters.range",
-          "limits":"classification![7:7]"
-        },
-        {
-          "type":"filters.range",
-          "limits":"NumberOfReturns[1:7],ReturnNumber[1:7]"
-        },
-        {
-            "type":"filters.smrf"
-        },
-        {
-           "type":"writers.las",
-           "compression": "true"
-        }
-    ]
-}
+[
+    {
+      "type": "readers.las"
+    },
+    {
+       "type": "filters.sample",
+       "cell": 0.20
+    },
+    {
+       "type": "filters.elm"
+    },
+    {
+       "type": "filters.outlier",
+       "method": "statistical",
+       "multiplier": 3,
+       "mean_k": 8
+    },
+    {
+       "type": "filters.smrf",
+       "ignore": "Classification[7:7]",
+       "cell": 0.2,
+       "slope": 0.2,
+       "window": 16,
+       "threshold": 0.45,
+       "scalar": 1.2
+    },
+    {
+       "type":"writers.las",
+       "dataformat_id":6,
+       "minor_version":4,
+       "scale_x":0.000820209974,
+       "scale_y":0.000820209974,
+       "scale_z":0.000820209974
+    }
+]
